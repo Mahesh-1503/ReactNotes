@@ -177,6 +177,148 @@ This course is designed to take you from React basics to advanced concepts throu
      * Props shouldn't be changed by the component that receives them
      * State can be updated by its own component
 
+   - Lifting State Up:
+     * A pattern for sharing state between components
+     * Move the state to the closest common ancestor of components that need it
+     * Pass the state down as props and update functions as callbacks
+     * Example:
+       ```jsx:src/components/TemperatureConverter.js
+       import React, { useState } from 'react';
+
+       function TemperatureInput({ scale, temperature, onTemperatureChange }) {
+         return (
+           <fieldset>
+             <legend>Enter temperature in {scale}:</legend>
+             <input
+               value={temperature}
+               onChange={(e) => onTemperatureChange(e.target.value)}
+             />
+           </fieldset>
+         );
+       }
+
+       function TemperatureConverter() {
+         const [celsius, setCelsius] = useState('');
+         const [fahrenheit, setFahrenheit] = useState('');
+
+         function toCelsius(fahrenheit) {
+           return (fahrenheit - 32) * 5 / 9;
+         }
+
+         function toFahrenheit(celsius) {
+           return (celsius * 9 / 5) + 32;
+         }
+
+         function handleCelsiusChange(temperature) {
+           setCelsius(temperature);
+           setFahrenheit(Math.round(toFahrenheit(temperature)));
+         }
+
+         function handleFahrenheitChange(temperature) {
+           setFahrenheit(temperature);
+           setCelsius(Math.round(toCelsius(temperature)));
+         }
+
+         return (
+           <div>
+             <TemperatureInput
+               scale="Celsius"
+               temperature={celsius}
+               onTemperatureChange={handleCelsiusChange}
+             />
+             <TemperatureInput
+               scale="Fahrenheit"
+               temperature={fahrenheit}
+               onTemperatureChange={handleFahrenheitChange}
+             />
+           </div>
+         );
+       }
+       ```
+
+   - Controlled Components:
+     * Form elements whose values are controlled by React state
+     * Useful for immediate validation and conditional disabling of form submission
+     * Example:
+       ```jsx:src/components/ControlledForm.js
+       import React, { useState } from 'react';
+
+       function ControlledForm() {
+         const [name, setName] = useState('');
+         const [email, setEmail] = useState('');
+         const [isValid, setIsValid] = useState(false);
+
+         const handleNameChange = (e) => {
+           setName(e.target.value);
+           validateForm(e.target.value, email);
+         };
+
+         const handleEmailChange = (e) => {
+           setEmail(e.target.value);
+           validateForm(name, e.target.value);
+         };
+
+         const validateForm = (name, email) => {
+           const isNameValid = name.length > 0;
+           const isEmailValid = /\S+@\S+\.\S+/.test(email);
+           setIsValid(isNameValid && isEmailValid);
+         };
+
+         const handleSubmit = (e) => {
+           e.preventDefault();
+           if (isValid) {
+             console.log('Form submitted:', { name, email });
+           }
+         };
+
+         return (
+           <form onSubmit={handleSubmit}>
+             <input
+               type="text"
+               value={name}
+               onChange={handleNameChange}
+               placeholder="Name"
+             />
+             <input
+               type="email"
+               value={email}
+               onChange={handleEmailChange}
+               placeholder="Email"
+             />
+             <button type="submit" disabled={!isValid}>
+               Submit
+             </button>
+           </form>
+         );
+       }
+       ```
+
+   - PropTypes:
+     * A way to validate the types of props passed to a component
+     * Helps catch bugs by ensuring correct data types are used
+     * Example:
+       ```jsx:src/components/User.js
+       import PropTypes from 'prop-types';
+
+       function User({ name, age, isStudent }) {
+         return (
+           <div>
+             <p>Name: {name}</p>
+             <p>Age: {age}</p>
+             <p>Student: {isStudent ? 'Yes' : 'No'}</p>
+           </div>
+         );
+       }
+
+       User.propTypes = {
+         name: PropTypes.string.isRequired,
+         age: PropTypes.number,
+         isStudent: PropTypes.bool
+       };
+
+       export default User;
+       ```
+
 4. Handling events and conditional rendering
    - Handling Events:
      * How your app responds to user actions like clicks or key presses
