@@ -28,7 +28,7 @@ This course is designed to take you from React basics to advanced concepts throu
        }
        ```
 
-2. Setting up a React environment
+2. Setting up a React environment and understanding imports/exports
    - Tools you'll need:
      * Node.js: A JavaScript runtime (like a special program to run JavaScript)
      * npm: Node Package Manager (comes with Node.js, helps install React tools)
@@ -47,6 +47,81 @@ This course is designed to take you from React basics to advanced concepts throu
        ```
      * This creates a new folder with all the files you need to start coding
    
+   - Understanding imports and exports:
+     * Imports and exports allow you to share code between different files
+     * This is crucial for organizing your React components and keeping your code modular
+
+   - Import:
+     * Used to include modules, components, or specific exports from other files
+     * Examples:
+       ```jsx
+       // Default import
+       import React from 'react';
+
+       // Named import
+       import { useState, useEffect } from 'react';
+
+       // Importing a component
+       import MyComponent from './MyComponent';
+
+       // Importing everything as an object
+       import * as ReactRouter from 'react-router-dom';
+       ```
+
+   - Export:
+     * Used to make functions, objects, or primitives available to other files
+     * Examples:
+       ```jsx
+       // Default export
+       export default function MyComponent() {
+         // Component code
+       }
+
+       // Named exports
+       export const myFunction = () => {
+         // Function code
+       };
+
+       export const MY_CONSTANT = 42;
+
+       // Multiple named exports
+       export { myFunction, MY_CONSTANT };
+       ```
+
+   - Tips for imports:
+     * Use `./` for same-directory or child-directory imports
+       - Example: `import Header from './components/Header';`
+     * Use `../` to go up a directory
+       - Example: `import Mahesh from '../projectsx/Mahesh';`
+     * The number of `../` depends on how many levels you need to go up
+       - `../../` goes up two directories, and so on
+     * The file extension (.js or .jsx) is optional in imports
+     * For absolute imports, configure your project's `jsconfig.json` or `tsconfig.json`
+     * When importing from `node_modules`, you don't need to specify the path
+       - Example: `import React from 'react';`
+     * Use named imports for specific exports: `import { useState } from 'react';`
+     * Use default import for the main export: `import MyComponent from './MyComponent';`
+     * You can combine default and named imports:
+       `import React, { useState } from 'react';`
+
+   - Using imports and exports in your React project:
+     * In src/App.js, you'll see imports for React and other components
+     * When you create new components, you'll export them and import them where needed
+     * Example:
+       ```jsx:src/components/Welcome.js
+       // Export the Welcome component
+       export default function Welcome(props) {
+         return <h1>Hello, {props.name}!</h1>;
+       }
+
+       // In src/App.js
+       import Welcome from './components/Welcome';
+
+       function App() {
+         return <Welcome name="React Learner" />;
+       }
+       ```
+
    - Understanding your new React project:
      * src/ folder: Where you'll write your React code
      * public/ folder: For static files like images
