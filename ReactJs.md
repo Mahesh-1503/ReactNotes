@@ -704,9 +704,10 @@ This course is designed to take you from React basics to advanced concepts throu
 
    - Lifting State Up:
 
-     - A pattern for sharing state between components
-     - Move the state to the closest common ancestor of components that need it
-     - Pass the state down as props and update functions as callbacks
+     - A way to share data between related components
+     - Put shared data in a parent component
+     - Send data to child components as props
+     - Let child components update the data through functions
      - Example:
 
        ```jsx:src/components/TemperatureConverter.js
