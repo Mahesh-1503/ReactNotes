@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const BasicControlledInput = () => {
-    const [inputValue, setInputValue] = useState(' ');
+    const [inputValue, setInputValue] = useState(``);
     const handleChange = (event) => {
         setInputValue(event.target.value);
     };
