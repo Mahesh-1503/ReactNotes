@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './EventHandlingExamples.css'; // Add this import
 
 function EventHandlingExample2() {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,7 +10,7 @@ function EventHandlingExample2() {
 
   return (
     <div>
-      <button onClick={toggleVisibility}>Toggle Visibility</button>
+      <button className="glow-button" onClick={toggleVisibility}>Toggle Visibility</button>
       {isVisible && <p>This paragraph is conditionally rendered.</p>}
     </div>
   );
