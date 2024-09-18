@@ -14,6 +14,7 @@ const TextareaAndSelect = () => {
     }
   return (
     <div>
+      <form autoComplete="off">
       <h2>Controlled Textarea and Select Example 3</h2>
       
       <textarea 
@@ -36,6 +37,7 @@ const TextareaAndSelect = () => {
       </select>
       <p>Description: {formState.description}</p>
       <p>Selected Category: {formState.category}</p>
+      </form>
     </div>
   );
 };

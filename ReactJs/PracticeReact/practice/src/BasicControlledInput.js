@@ -7,16 +7,18 @@ const BasicControlledInput = () => {
     };
     return (
         <div>
-            <h2>Basic Controlled Input Example 1</h2>
-            <input
+            <form autoComplete="off">
+                <h2>Basic Controlled Input Example 1</h2>
+                <input
                 type="text"
                 placeholder="Type Something..."
                 value={inputValue}
                 onChange={handleChange}
             />
-            <p>You Typed: {inputValue}</p>
+                <p>You Typed: {inputValue}</p>
+            </form>
         </div>
     );
 };
 
-export default BasicControlledInput
+export default BasicControlledInput;

@@ -11,10 +11,12 @@ const EventHandlingExample1 = () => {
   return (
     <div>
       <h2>Event Handling Example 1</h2>
+      <form autoComplete="off">
       {/* Attach the click event to the button */}
       <button className='btn' onClick={handleClick}>
         Click Me
       </button>
+      </form>
     </div>
   );
 };

@@ -13,7 +13,7 @@ const MultipleControlledInputs = () => {
   return (
     <div>
       <h2>Multiple Controlled Input Example 2</h2>
-      <form>
+      <form autoComplete="off">
         <div>
             
             <input type="text" id="firstName" name="firstName" placeholder='First Name...' value={formData.firstName} onChange={handleChange} /> <br /> <br />      
