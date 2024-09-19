@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const EventHandlingExample1 = () => {
+function EventHandlingExample1() {
   // Define a function to handle button click
   const handleClick = () => {
     alert('Button clicked!');
