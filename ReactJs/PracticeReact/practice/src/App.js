@@ -14,7 +14,7 @@ function App() {
       <BasicControlledInput />
       <MultipleControlledInputs />
       <TextareaAndSelect />
-      <FormWithValidation />
+      <FormWithValidation />{/*few more examples left */}
       <EventHandlingExample1 />
       <EventHandlingExample2 />
     </div>
