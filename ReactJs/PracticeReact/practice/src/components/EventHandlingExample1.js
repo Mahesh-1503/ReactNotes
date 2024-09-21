@@ -2,22 +2,13 @@
 
 import React from 'react';
 
-function EventHandlingExample1() {
-  // Define a function to handle button click
+const EventHandlingExample1 = () => {
   const handleClick = () => {
     alert('Button clicked!');
   };
 
   return (
-    <div>
-      <h2>Event Handling Example 1</h2>
-      <form autoComplete="off">
-      {/* Attach the click event to the button */}
-      <button className='btn' onClick={handleClick}>
-        Click Me
-      </button>
-      </form>
-    </div>
+    <button onClick={handleClick}>Click me</button>
   );
 };
 

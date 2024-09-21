@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
-import './EventHandlingExamples.css'; // Add this import
 
-function EventHandlingExample2() {
-  const [isVisible, setIsVisible] = useState(false);
+const EventHandlingExample2 = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const toggleVisibility = () => {
-    setIsVisible(!isVisible);
+  const handleLoginToggle = () => {
+    setIsLoggedIn(!isLoggedIn);
   };
 
   return (
     <div>
-      <button className="glow-button" onClick={toggleVisibility}>Toggle Visibility</button>
-      {isVisible && <p>This paragraph is conditionally rendered.</p>}
+      <button onClick={handleLoginToggle}>
+        {isLoggedIn ? 'Log out' : 'Log in'}
+      </button>
+      {isLoggedIn && <p>Welcome, user!</p>}
     </div>
   );
-}
+};
 
 export default EventHandlingExample2;
