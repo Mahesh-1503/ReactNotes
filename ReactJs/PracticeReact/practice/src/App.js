@@ -10,6 +10,7 @@ import EventHandlingExample3 from './components/EventHandlingExample3';
 import EventHandlingExample4 from './components/EventHandlingExample4';
 import EventHandlingExample5 from './components/EventHandlingExample5';
 
+
 function App() {
   return (
     <div className="App">
@@ -30,7 +31,9 @@ function App() {
 
       <EventHandlingExample4 />
 
-      <EventHandlingExample5 />   
+      <EventHandlingExample5 />  
+
+      
     </div>
   );
 }

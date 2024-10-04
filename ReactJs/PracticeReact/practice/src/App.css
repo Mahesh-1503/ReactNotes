@@ -248,4 +248,10 @@ button:active {
   left: -75%;
 }
 
+.bttn{
+  background-color: #323933;
+  border: none;
+  
+}
+
 /* ... rest of the existing code ... */

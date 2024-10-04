@@ -8,21 +8,10 @@ const EventHandlingExample1 = () => {
   };
 
   return (
-    <button onClick={handleClick}>Click me</button>
+    <button className='bttn' onClick={handleClick}>Click me</button>
   );
 };
 
 export default EventHandlingExample1;
 
-{/* 
-Explanation:
-This component demonstrates basic event handling in React:
-
-1. We define a functional component called EventHandlingExample1.
-2. Inside the component, we create a handleClick function that shows an alert when called.
-3. In the JSX, we render a button element.
-4. We attach the handleClick function to the button's onClick event using the onClick attribute.
-5. When the button is clicked, it triggers the handleClick function, showing the alert.
-
-This example showcases how to create a simple event handler and attach it to a DOM element in React.
-*/}
+// In this example, we define a function called handleClick that displays an alert when the button is clicked. We then use this function as the onClick event handler for the button element. When the button is clicked, the handleClick function is called, which in turn displays the alert.
