@@ -9,6 +9,7 @@ import EventHandlingExample2 from './components/EventHandlingExample2';
 import EventHandlingExample3 from './components/EventHandlingExample3';
 import EventHandlingExample4 from './components/EventHandlingExample4';
 import EventHandlingExample5 from './components/EventHandlingExample5';
+import FruitList from './components/FruitList';
 
 
 function App() {
@@ -31,7 +32,9 @@ function App() {
 
       <EventHandlingExample4 />
 
-      <EventHandlingExample5 />  
+      <EventHandlingExample5 />
+
+      <FruitList />  
 
       
     </div>
