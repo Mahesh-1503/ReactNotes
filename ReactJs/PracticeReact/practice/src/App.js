@@ -10,7 +10,9 @@ import EventHandlingExample3 from './components/EventHandlingExample3';
 import EventHandlingExample4 from './components/EventHandlingExample4';
 import EventHandlingExample5 from './components/EventHandlingExample5';
 import FruitList from './components/FruitList';
-
+import ToDo from './components/ToDo';
+import LoginForm from './components/LoginForm';
+import Counter from './components/useState';
 
 function App() {
   return (
@@ -34,9 +36,13 @@ function App() {
 
       <EventHandlingExample5 />
 
-      <FruitList />  
+      <FruitList />
 
-      
+      <ToDo />  
+
+      <LoginForm />
+
+      <Counter />
     </div>
   );
 }
