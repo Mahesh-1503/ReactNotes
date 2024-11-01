@@ -13,6 +13,7 @@ import FruitList from './components/FruitList';
 import ToDo from './components/ToDo';
 import LoginForm from './components/LoginForm';
 import Counter from './components/useState';
+import Counter2 from './components/useEffect';
 
 function App() {
   return (
@@ -43,6 +44,8 @@ function App() {
       <LoginForm />
 
       <Counter />
+
+      <Counter2 />
     </div>
   );
 }
